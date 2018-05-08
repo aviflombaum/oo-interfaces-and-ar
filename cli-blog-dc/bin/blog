@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require_relative '../config/environment'
+
+puts "Welcome to My Blog"
+puts "...loading posts..."
+
+require_relative '../db/seed.rb'
+
+Post.all.each do |post|
+  puts "#{post.id} - #{post.title}"
+end
+
